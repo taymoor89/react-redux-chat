@@ -76,7 +76,7 @@ class CreateChat extends React.Component {
                             this.state.participants.map(participant => {
                                 return <Badge key={participant._id} color="primary" pill
                                     onClick={e => this.toggleUser(participant)}
-                                    >{participant.name} x</Badge>
+                                    >{participant.name} <small>{`@${participant.username}`}</small> x</Badge>
                             })
                         }
                         <Form>

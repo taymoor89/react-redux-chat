@@ -6,7 +6,7 @@ export default ({users, toggleUser}) => {
             {users.map(user => 
                 <ListGroupItem 
                 key={user._id} id={user._id} 
-                onClick={e => toggleUser(user)}> {user.name}</ListGroupItem>
+                onClick={e => toggleUser(user)}> {user.name} <small>{`@${user.username}`}</small></ListGroupItem>
             )}
         </ListGroup>
     )
