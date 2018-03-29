@@ -21,7 +21,7 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
+      <Router basename={process.env.REACT_APP_BASE_NAME || '/'}>
         <Container fluid>
           <Switch>
             <PrivateRoute path="/chat" component={Chat} />
