@@ -2,7 +2,7 @@
   "name": "homelike-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://myusername.github.io/my-app",
+  "homepage": "https://taymoor89.github.io/react-redux-chat",
   "dependencies": {
     "bootstrap": "^4.0.0",
     "gh-pages": "^1.1.0",
