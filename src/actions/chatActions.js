@@ -17,9 +17,10 @@ export function fetchChat() {
 export function createChat(chat, history) {
     return async (dispatch) => {
         const userId = localStorage.getItem('user-id')
+        let participantsIds = chat.participants.map(user => user._id)
         const payload = {
             ...chat,
-            participants: chat.participants.map(user => user._id)
+            participants: [...participantsIds, userId]
         }
         const options = {
             method: 'POST',
