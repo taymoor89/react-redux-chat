@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Col, Input } from 'reactstrap';
+import { Button, FormGroup, Col, Input } from 'reactstrap';
 
 class MessageInput extends Component {
     constructor(props) {
@@ -13,7 +13,7 @@ class MessageInput extends Component {
     }
 
     handleKeyPress = (e) => {
-        if(e.keyCode == 13){
+        if(e.keyCode === 13){
             this.handleSend()
         }
     }

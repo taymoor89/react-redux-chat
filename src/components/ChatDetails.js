@@ -34,7 +34,7 @@ class ChatDetails extends Component {
     componentWillReceiveProps (nextProps) {
         const oldChatId = this.props.chat._id
         const newChatId = nextProps.chat._id
-        if(oldChatId != newChatId && newChatId){            
+        if(oldChatId !== newChatId && newChatId){            
             this.props.dispatch(fetchMessages(newChatId))
         }
     }
@@ -64,7 +64,7 @@ class ChatDetails extends Component {
                         deleteMessage={this.handleDeleteMessage} 
                         messages={this.props.chat.messages}/>
                 </CardBody>
-                <CardFooter className="mt-auto" className="container">
+                <CardFooter className="container mt-auto">
                     <MessageInput sendMessage={this.handleSendMessage}/>
                 </CardFooter>
             </Card>
@@ -79,7 +79,7 @@ const mapStateToProps = (state, ownProps) => {
         messages: [] 
     }
     const chat = state.chat.chat.find(item => 
-        item._id == ownProps.match.params.id
+        item._id === ownProps.match.params.id
     ) || defaultChat
 
     return {

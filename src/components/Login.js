@@ -7,8 +7,7 @@ import {
     Button,
     Form,
     FormGroup,
-    Input,
-    Label
+    Input
 } from 'reactstrap'
 
 import { join } from '../actions/authActions'
@@ -36,7 +35,7 @@ class Login extends Component {
     render() {
         const { from } = this.props.location.state || { from: { pathname: "/" } }
         if(this.props.isAuthenticated) {
-            return <Redirect to="/chat" />
+            return <Redirect to={from} />
         }
 
         return (

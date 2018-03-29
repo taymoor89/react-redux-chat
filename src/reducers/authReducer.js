@@ -3,7 +3,7 @@ export default function reducer(state={
     fetching: false,
     fetched: false,
     error: null,
-    isAuthenticated: localStorage.getItem('access-token')? true: false
+    isAuthenticated: localStorage.getItem('user-id')? true: false
   }, action) {
     switch (action.type) {
       case "FETCH_USER_PENDING": {

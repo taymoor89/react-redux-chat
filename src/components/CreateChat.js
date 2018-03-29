@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import {
     Button,
     Modal,
@@ -12,7 +11,6 @@ import {
 } from 'reactstrap'
 
 import Users from './Users'
-import { createChat } from '../actions/chatActions'
 
 class CreateChat extends React.Component {
     state = {

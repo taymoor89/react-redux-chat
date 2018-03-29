@@ -27,15 +27,6 @@ export default function reducer(state={
             }
         }
         
-        case "SEND_MESSAGE": {
-            const {chatId} = action.payload
-            let {message} = action.payload
-            let newChat = [...state.chat]
-            return {
-                ...state
-            }
-        }
-        
         case "ADD_CHAT": {
             const chatId = action.payload._id
             const found = state.chat.find(chat => chat._id === chatId)
@@ -50,6 +41,7 @@ export default function reducer(state={
                     chat: [...state.chat, payload]
                 }
             }
+            break;
         }
 
         case "ADD_MESSAGE": {
