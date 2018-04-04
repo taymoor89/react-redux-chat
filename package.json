@@ -7,6 +7,9 @@
     "bootstrap": "^4.0.0",
     "gh-pages": "^1.1.0",
     "history": "^4.7.2",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.3",
+    "prettier": "^1.11.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
@@ -20,11 +23,18 @@
     "socket.io": "^2.0.4"
   },
   "scripts": {
+    "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "REACT_APP_BASE_NAME=/react-redux-chat react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
   }
 }

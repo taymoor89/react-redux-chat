@@ -1,23 +1,21 @@
-import React, { Component } from 'react'
-import { Container } from 'reactstrap'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { Container } from 'reactstrap';
+import { connect } from 'react-redux';
 import {
-  BrowserRouter as Router, 
-  Route, 
+  BrowserRouter as Router,
+  Route,
   Redirect,
   Switch
-} from 'react-router-dom'
+} from 'react-router-dom';
 
-
-import PrivateRoute from './PrivateRoute'
-import Chat from './Chat'
-import Login from './Login'
-import { fetchUser } from '../actions/authActions' 
+import PrivateRoute from './PrivateRoute';
+import Chat from './Chat';
+import Login from './Login';
+import { fetchUser } from '../actions/authActions';
 
 class App extends Component {
   componentWillMount() {
-    if(this.props.isAuthenticated)
-      this.props.dispatch(fetchUser())
+    if (this.props.isAuthenticated) this.props.dispatch(fetchUser());
   }
   render() {
     return (
@@ -30,14 +28,14 @@ class App extends Component {
           </Switch>
         </Container>
       </Router>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => {
   return {
     isAuthenticated: state.auth.isAuthenticated
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(App);

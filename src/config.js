@@ -1,1 +1,1 @@
-export const apiServer = 'https://homelike-rest.herokuapp.com'
+export const apiServer = 'https://homelike-rest.herokuapp.com';
